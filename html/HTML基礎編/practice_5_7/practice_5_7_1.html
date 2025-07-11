@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>練習問題5-7 ファイルアップロード入力欄を作成しよう！</title>
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="練習問題5-7-1 ファイルアップロード入力欄を作成しよう"
+    />
+  </head>
+  <body>
+    <form name="quiz2" action="signal.php" method="post">
+      <fieldset>
+        <legend>Q：画像をアップロードして下さい</legend>
+        <input type="file" name="upload" enctype="multipart/form-data" />
+      </fieldset>
+      <p><input type="submit" value="送信" /></p>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>練習問題5-3 複数選択できる選択ボタンを作成しよう！</title>
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="練習問題5-3-1 アンケートなどでよく使う複数選択できる選択ボタンを作成しよう"
+    />
+  </head>
+  <body>
+    <!-- ここに答えを書く -->
+    <form name="questionnaire" action="questionnaire.php" method="post">
+      <fieldset>
+        <legend>Q：趣味はなんですか？</legend>
+        <label
+          ><input type="checkbox" name="music" value="1" />1.音楽鑑賞</label
+        >
+        <label
+          ><input type="checkbox" name="movies" value="2" />2.映画鑑賞</label
+        >
+        <label><input type="checkbox" name="reading" value="3" />3.読書</label>
+        <label
+          ><input type="checkbox" name="traveling" value="4" />4.旅行</label
+        >
+        <label><input type="checkbox" name="fishing" value="5" />5.釣り</label
+        ><br />
+      </fieldset>
+      <p><input type="submit" value="送信" /></p>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>課題5-2 一意な選択ボタンを作成しよう！</title>
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="課題5-2-1 三択問題の選択ボタンを作成しよう"
+    />
+  </head>
+  <body>
+    <!-- ここに答えを書く -->
+    <form name="quiz" action="signal.php" method="post">
+      <fieldset>
+        <legend>Q：今回ご利用したコースの満足度は？</legend>
+        <label><input type="radio" name="course" value="5" />満足</label>
+        <label><input type="radio" name="course" value="4" />やや満足</label>
+        <label
+          ><input
+            type="radio"
+            name="course"
+            value="3"
+          />どちらともいえない</label
+        >
+        <label><input type="radio" name="course" value="2" />やや不満</label>
+        <label><input type="radio" name="course" value="1" />不満</label><br />
+      </fieldset>
+    </form>
+    <form name="quiz2" action="signal.php" method="post"></form>
+      <fieldset>
+        <legend>Q：今回ご利用したコースの満足度は？</legend>
+        <label><input type="radio" name="star_rating" value="1" />★</label>
+        <label><input type="radio" name="star_rating" value="2" />★★</label>
+        <label><input type="radio" name="star_rating" value="3" />★★★</label>
+        <label><input type="radio" name="star_rating" value="4" />★★★★</label>
+        <label><input type="radio" name="star_rating" value="5" />★★★★★</label><br />
+      </fieldset>
+      <p><input type="submit" value="送信" /></p>
+    </form>
+  </body>
+</html>
