@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <title>課題3-4-1 記事詳細ページを作成しよう</title>
+  <meta charset="utf-8">
+  <meta name="description" content="課題3-4-1  記事詳細ページを作成しよう">
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-size: 16px;
+
+    }
+
+    .title {
+
+      text-align: center;
+      width: 200px;
+
+
+    }
+
+    .button-area {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      margin-left: 40px;
+      margin-right: 40px;
+    }
+
+    .button {
+
+
+      background-color: white;
+      border: 1px solid black;
+
+
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <fieldset style="margin: 0; width: 700px;">
+    <form name="questionnaire" action="answer.php" method="post">
+      <div class="article-meta">
+        <p>
+          <span>投稿者：投稿者名前</span>
+          <span style="padding-left: 20px;">投稿日時：2023年12月31日</span><br>
+        </p>
+        <p>記事タイトル</p>
+        <p>
+          追おおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおお
+        </p>
+        <div class="button-area">
+          <button type="submit" class="button">コメントを書く</button>
+
+          <button type="button" class="button" onclick="history.back()">戻る</button>
+        </div>
+
+  </fieldset>
+
+
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+
+<head>
+  <title>課題3-1-1 記事一覧ページを作成しよう</title>
+  <meta charset="utf-8">
+  <meta name="description" content="課題3-1-1  記事一覧ページを作成しよう">
+  <style>
+    .edit,
+    .delete,
+    .pagination a {
+      color: inherit;
+      /* 親要素の文字色を使う（黒など） */
+      text-decoration: none;
+      /* 下線を消す */
+      cursor: pointer;
+      /* マウスカーソルを指マークに（任意） */
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .pagination a {
+      /* aはリンクのこと */
+      margin: 0 8px;
+      /* 左右に8pxの余白 */
+      text-decoration: none;
+    }
+
+    .no {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <fieldset style="margin: 0; width: 816px;">
+    <!-- 余白調整 -->
+    <table border="1" rules="all" cellspacing="0" cellpadding="0" width="800px" height=" 100px">
+      <tr align="center">
+        <td>no</td>
+        <td>投稿日</td>
+        <td>記事タイトル</td>
+        <td>投稿者</td>
+        <td align="center"><a href="#" class="edit">編集</a></td>
+        <td align="center"><a href="#" class="delete">削除</a></td>
+      </tr>
+      <tr>
+        <td class="no">1</td>
+        <td>2023年12月31日</td>
+        <td>記事タイトル</td>
+        <td>投稿者名前</td>
+        <td align="center"><a href="#" class="edit">編集</a></td>
+        <td align="center"><a href="#" class="delete">削除</a></td>
+      </tr>
+      <tr>
+        <td class="no">2</td>
+        <td>2023年12月31日</td>
+        <td>記事タイトル</td>
+        <td>投稿者名前</td>
+        <td align="center"><a href="#" class="edit">編集</a></td>
+        <td align="center"><a href="#" class="delete">削除</a></td>
+      </tr>
+      <tr>
+        <td class="no">3</td>
+        <td>2023年12月31日</td>
+        <td>記事タイトル</td>
+        <td>投稿者名前</td>
+        <td align="center"><a href="#" class="edit">編集</a></td>
+        <td align="center"><a href="#" class="delete">削除</a></td>
+      </tr>
+      <tr>
+        <td class="no">4</td>
+        <td>2023年12月31日</td>
+        <td>記事タイトル</td>
+        <td>投稿者名前</td>
+        <td align="center"><a href="#" class="edit">編集</a></td>
+        <td align="center"><a href="#" class="delete">削除</a></td>
+      </tr>
+      <tr>
+        <td class="no">5</td>
+        <td>2023年12月31日</td>
+        <td>記事タイトル</td>
+        <td>投稿者名前</td>
+        <td align="center"><a href="#" class="edit">編集</a></td>
+        <td align="center"><a href="#" class="delete">削除</a></td>
+      </tr>
+      <tr>
+        <td class="no">6</td>
+        <td>2023年12月31日</td>
+        <td>記事タイトル</td>
+        <td>投稿者名前</td>
+        <td align="center"><a href="#" class="edit">編集</a></td>
+        <td align="center"><a href="#" class="delete">削除</a></td>
+      </tr>
+      <tr>
+        <td class="no">7</td>
+        <td>2023年12月31日</td>
+        <td>記事タイトル</td>
+        <td>投稿者名前</td>
+        <td align="center"><a href="#" class="edit">編集</a></td>
+        <td align="center"><a href="#" class="delete">削除</a></td>
+      </tr>
+      <tr>
+        <td class="no">8</td>
+        <td>2023年12月31日</td>
+        <td>記事タイトル</td>
+        <td>投稿者名前</td>
+        <td align="center"><a href="#" class="edit">編集</a></td>
+        <td align="center"><a href="#" class="delete">削除</a></td>
+      </tr>
+      <tr>
+        <td class="no">9</td>
+        <td>2023年12月31日</td>
+        <td>記事タイトル</td>
+        <td>投稿者名前</td>
+        <td align="center"><a href="#" class="edit">編集</a></td>
+        <td align="center"><a href="#" class="delete">削除</a></td>
+      </tr>
+      <tr>
+        <td class="no">10</td>
+        <td>2023年12月31日</td>
+        <td>記事タイトル</td>
+        <td>投稿者名前</td>
+        <td align="center"><a href="#" class="edit">編集</a></td>
+        <td align="center"><a href="#" class="delete">削除</a></td>
+      </tr>
+
+    </table><br>
+
+    <div align="center" class="pagination">
+      &lt;&lt;&lt;
+      <a href="#">[1]</a>
+      <a href="#">[2]</a>
+      <a href="#">[3]</a>
+      <a href="#">[4]</a>
+      <a href="#">[5]</a>
+      <a href="#">[6]</a>
+      <a href="#">[7]</a>
+      <a href="#">[8]</a>
+      <a href="#">[9]</a>
+      <a href="#">[10]</a>
+      &gt;&gt;&gt;
+    </div><br>
+  </fieldset>
+
+
+</body>
+
+</html>

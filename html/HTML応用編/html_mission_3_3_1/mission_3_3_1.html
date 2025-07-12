@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <title>課題3-3-1 記事修正ページを作成しよう</title>
+  <meta charset="utf-8">
+  <meta name="description" content="課題3-3-1  記事修正ページを作成しよう">
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .title {
+
+      text-align: center;
+      width: 200px;
+
+      padding: 10px;
+
+      font-size: 16px;
+
+    }
+
+    textarea {
+      resize: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <fieldset style="margin: 0; width: 700px;">
+    <form name="questionnaire" action="answer.php" method="post">
+
+      <labelfor="title"> タイトル : </label><br>
+        <textarea name="title" id="title" rows="1" cols="100"
+          style="line-height: 1.5;padding-top: 15px;padding-bottom: 15px;">記事タイトル</textarea><br>
+        <labelfor=" content"> 内容 </label><br>
+          <textarea name="content" id="content" rows="7"
+            cols="100">ああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ</textarea>
+          <p style="text-align: right;"><input type="submit" value="編集登録"
+              style="margin-right: 50px;background-color: white;border: 1px solid black;padding: 4px 20px"></p>
+    </form>
+
+  </fieldset>
+
+
+</body>
+
+</html>
