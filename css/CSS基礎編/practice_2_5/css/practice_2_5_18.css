@@ -1,0 +1,9 @@
+.class_1:focus-visible {
+  outline: 3px double red;
+}
+.class_2:focus-visible {
+  outline: 3px dashed blue;
+}
+.class_3:focus-visible {
+  outline: 3px dotted green;
+}

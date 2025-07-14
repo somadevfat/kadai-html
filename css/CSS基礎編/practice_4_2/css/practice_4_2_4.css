@@ -1,0 +1,9 @@
+p {
+  color: red;
+}
+.class_name1 {
+  color: blue;
+}
+.class_name1 p {
+  color: unset;
+}

@@ -1,0 +1,10 @@
+p {
+  line-height: 36px;
+}
+p:nth-child(2) {
+  letter-spacing: 8px;
+}
+
+p:nth-child(4) {
+  font-size: 2em;
+}

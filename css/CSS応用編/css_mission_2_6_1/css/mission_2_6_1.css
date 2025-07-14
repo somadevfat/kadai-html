@@ -1,0 +1,9 @@
+div::after {
+  content: "後に追加";
+  color: green;
+}
+
+div::before {
+  content: "前に追加";
+  color: red;
+}

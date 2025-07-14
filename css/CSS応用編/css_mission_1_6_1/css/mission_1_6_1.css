@@ -1,0 +1,4 @@
+.child > p {
+  color: red;
+  background-color: black;
+}

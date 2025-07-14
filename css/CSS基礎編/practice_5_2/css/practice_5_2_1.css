@@ -1,0 +1,6 @@
+div {
+  background-image: url("https://d21p2wg81c3frr.cloudfront.net/Content/VeLKwglBdzsuy0OpJpLyyh5ecbHGPNVtbAYt1VfN.png"); /* 背景画像のURLを指定 */
+
+  width: 100vh; /* 横幅のサイズを指定 */
+  height: 100vh; /* 縦幅のサイズを指定 */
+}

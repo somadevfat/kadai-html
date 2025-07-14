@@ -1,0 +1,77 @@
+/* 基本的なスタイルリセットと設定 */
+body {
+  margin: 0;
+  font-family: sans-serif;
+  min-height: 100vh;
+}
+
+.box {
+  border: 1px solid #333;
+  padding: 20px;
+  box-sizing: border-box; /* paddingとborderを幅に含める */
+  text-align: center;
+}
+
+/* 全体レイアウト */
+.main-area {
+  display: flex; /* Flexboxを有効化 */
+}
+
+.content {
+  flex-grow: 1; /* 残りのスペースをすべて埋める */
+}
+
+.sidebar {
+  flex-basis: 200px; /* サイドバーの基本幅を指定 */
+  flex-shrink: 0; /* 画面が縮んでもサイドバーの幅を維持する */
+  border-left: 1px solid #333;
+}
+
+/* 各パーツの見た目 */
+.header,
+.footer,
+.menu {
+  padding: 20px;
+  border: 1px solid #333;
+  text-align: center;
+}
+.header {
+  border-bottom: none;
+}
+.menu {
+  border-top: none;
+  border-bottom: none;
+}
+.footer {
+  border-top: none;
+}
+.content {
+  border-top: none;
+}
+
+/* 各段の横並びレイアウト */
+.row {
+  display: flex; /* ここでもFlexboxを使用 */
+  border: 1px solid #333;
+  border-top: none;
+}
+
+/* 各カラムの幅を均等にする */
+.row .box {
+  flex-grow: 1; /* 親要素のスペースを均等に分け合う */
+  flex-basis: 0; /* 基本の幅を0にして、flex-growで均等に広がるようにする */
+}
+
+/* 色分け（画像に合わせる） */
+.row-4-columns .box {
+  background-color: #00ffff;
+}
+.row-3-columns .box {
+  background-color: #90ee90;
+}
+.row-2-columns .box {
+  background-color: #db7093;
+}
+.row-5-columns .box {
+  background-color: #b0c4de;
+}

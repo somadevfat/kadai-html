@@ -1,0 +1,4 @@
+p:before {
+  content: "追加したテキスト";
+  color: red;
+}

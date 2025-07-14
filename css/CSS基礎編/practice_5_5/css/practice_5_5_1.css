@@ -1,0 +1,7 @@
+div {
+  background-image: url("https://d21p2wg81c3frr.cloudfront.net/Content/VeLKwglBdzsuy0OpJpLyyh5ecbHGPNVtbAYt1VfN.png"); /* 背景画像のURLを指定 */
+  background-repeat: no-repeat; /* 画像の繰り返しを指定 */
+  width: 200px; /* 横幅のサイズを指定 */
+  height: 200px; /* 縦幅のサイズを指定 */
+  background-size: cover; /* 画像を指定の領域に合わせる */
+}

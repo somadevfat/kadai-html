@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box; /* 幅の計算に余白 など含めて*/
+
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  width: 50%;
+
+  max-width: 1980px;
+  margin: 0px auto;
+  border: 1px solid black;
+  padding: 10px;
+  gap: 10px; /* グリッドアイテム間の隙間 */
+
+  display: grid;
+  grid-template-columns: 3fr 1fr; /* 列の幅を4分割してサイドバーを1/4 ヘッダー等を3/4 */
+  grid-template-areas: /* 位置決め */
+    "header  sidebar"
+    "menu    sidebar"
+    "row1    sidebar"
+    "row2    sidebar"
+    "row3    sidebar"
+    "row4    sidebar"
+    "footer  sidebar";
+}
+/* grid-areaでグリッドエリア名に対応した要素、クラス属性を配置 */
+header {
+  grid-area: header;
+  border: 1px solid black;
+  height: 110px;
+  display: flex;
+  align-items: center;
+}
+.menu {
+  grid-area: menu;
+  border: 1px solid black;
+  height: 90px;
+  display: flex;
+  align-items: center;
+}
+
+.row-1 {
+  grid-area: row1;
+}
+.row-2 {
+  grid-area: row2;
+}
+.row-3 {
+  grid-area: row3;
+}
+.row-4 {
+  grid-area: row4;
+}
+footer {
+  grid-area: footer;
+  border: 1px solid black;
+  height: 70px;
+}
+.side {
+  grid-area: sidebar;
+  border: 1px solid black;
+}
+
+/* .rowをflexで横に並べていく */
+.row {
+  display: flex;
+  padding: 2px;
+  border: 1px solid #333;
+}
+
+/* .boxを枠など */
+.box {
+  flex: 1; /* row内で均等にする*/
+  border: 1px solid #333; /* 外枠線 */
+  height: 110px;
+  margin: 2px;
+}
+
+.row-1 .box {
+  background-color: #00ffff;
+}
+.row-2 .box {
+  background-color: #95f895;
+}
+.row-3 .box {
+  background-color: #e685c4;
+}
+.row-4 .box {
+  background-color: #a5b6e2;
+}

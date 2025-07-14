@@ -1,0 +1,4 @@
+div:nth-of-type(n + 4) {
+  color: red;
+  background-color: black;
+}

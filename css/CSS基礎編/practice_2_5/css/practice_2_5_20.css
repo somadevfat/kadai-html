@@ -1,0 +1,4 @@
+p:after {
+  content: "追加したテキスト";
+  color: red;
+}

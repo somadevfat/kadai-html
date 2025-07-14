@@ -1,0 +1,9 @@
+div {
+  background-image: url("https://d21p2wg81c3frr.cloudfront.net/Content/myA5vuONjTICr6Y3iqQB42gQk2q4fEIZrPLJcHVe.png"),
+    url("https://d21p2wg81c3frr.cloudfront.net/Content/KNHqkbS7qZGy6k2kJmQOndnmzeyUDwoUWOcvebZm.png");
+  width: 100vw; /* 横幅を広めに調整 */
+  height: 100vh; /* 縦幅のサイズを指定 */
+
+  background-repeat: no-repeat;
+  background-size: auto, auto;
+}

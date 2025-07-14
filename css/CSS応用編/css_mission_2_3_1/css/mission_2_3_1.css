@@ -1,0 +1,9 @@
+li:nth-child(4) {
+  color: red;
+  background-color: black;
+}
+
+li:nth-last-child(4) {
+  color: green;
+  background-color: grey;
+}

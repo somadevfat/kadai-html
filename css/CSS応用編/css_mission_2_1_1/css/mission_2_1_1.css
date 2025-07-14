@@ -1,0 +1,5 @@
+li:first-child,
+li:last-child {
+  color: red;
+  background-color: black;
+}

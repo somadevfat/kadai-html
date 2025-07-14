@@ -1,0 +1,12 @@
+.class_name1 {
+  color: blue;
+  padding: 100px;
+  margin: 100px;
+  border: 3px solid;
+}
+
+.class_name1 p {
+  padding: inherit;
+  margin: inherit;
+  border: inherit;
+}

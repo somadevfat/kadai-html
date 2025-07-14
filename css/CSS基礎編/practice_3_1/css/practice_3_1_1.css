@@ -1,0 +1,18 @@
+p {
+  color: red;
+}
+#id_name {
+  color: blue;
+}
+.class_name {
+  color: green;
+}
+p {
+  color: orange;
+}
+#id_name {
+  color: orange;
+}
+.class_name {
+  color: orange;
+}

@@ -1,0 +1,24 @@
+table {
+  border-collapse: collapse;
+  border-color: red;
+  border-style: solid;
+  border-width: 5px;
+  font-family: "游明朝", "Yu Mincho", YuMincho, "Hiragino Mincho Pro", serif;
+  font-size: 1.5em;
+  color: green;
+  font-weight: bold;
+}
+th {
+  background-color: gray;
+}
+tr:nth-child(odd) {
+  background: #cccccc;
+}
+tr:hover {
+  background: #ffcccc;
+}
+
+a {
+  cursor: url(https://d21p2wg81c3frr.cloudfront.net/Content/DjTNNqI0Gp0oxNMCaRQXNPOZDY2SjqfyVRZftkPf.png),
+    pointer;
+}
