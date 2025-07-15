@@ -1,0 +1,36 @@
+日付: 2025/07/14
+件名: CSS レイアウト応用課題 課題6-1~8-1
+
+## 学んだこと
+- `flex-wrap: wrap;` と `flex-basis: calc()` を使った要素の折り返し方法
+- `order` プロパティによる表示順の入れ替え
+- `flex-direction: column;` を使った縦方向の配置
+
+## 課題
+- flexboxとgridでよく使うプロパティを覚えておく。
+- チートシートなど見て一通りできるように流れは掴んでおく。
+
+---
+
+### よく使うFlexboxプロパティ
+- **コンテナ用**
+    - `display: flex;`: フレックスボックスを作成します。
+    - `flex-direction`: アイテムの並ぶ方向（主軸）を決めます。(row, column)
+    - `justify-content`: 主軸方向のアイテムの揃え方を決めます。(flex-start, center, space-between)
+    - `align-items`: 交差軸方向のアイテムの揃え方を決めます。(flex-start, center, stretch)
+    - `flex-wrap`: アイテムの折り返し方法を決めます。(nowrap, wrap)
+- **アイテム用**
+    - `flex-grow`: アイテムの伸びる比率を指定します。
+    - `flex-shrink`: アイテムの縮む比率を指定します。
+    - `flex-basis`: アイテムの基本サイズを指定します。
+    - `order`: アイテムの表示順を決めます。
+
+### よく使うGridプロパティ
+- **コンテナ用**
+    - `display: grid;`: グリッドコンテナを作成します。
+    - `grid-template-columns`: 列の幅や数を定義。
+    - `grid-template-rows`: 行の高さや数を定義。
+    - `gap` (`grid-gap`): グリッドアイテム間の隙間（溝）を設定。
+- **アイテム用**
+    - `grid-column`: アイテムがどの列にまたがるかを指定。
+    - `grid-row`: アイテムがどの行にまたがるかを指定。
