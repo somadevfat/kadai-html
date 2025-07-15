@@ -1,0 +1,148 @@
+/* ========= 全体設定 ========= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+/* ========= Flexbox Layout ========= */
+.main {
+  width: 50%;
+  max-width: 1980px;
+  margin: 0px auto;
+  border: 1px solid black;
+  padding: 10px;
+  gap: 10px;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.content-wrapper {
+  flex: 3;
+  min-width: 0; /* flexアイテムが縮みすぎるのを防ぐ */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.side {
+  flex: 1;
+  min-width: 0; /* flexアイテムが縮みすぎるのを防ぐ */
+  border: 1px solid black;
+}
+
+header {
+  border: 1px solid black;
+  height: 110px;
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  border: 1px solid black;
+  height: 90px;
+  display: flex;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+  padding: 2px;
+  border: 1px solid #333;
+  gap: 10px;
+}
+
+.box {
+  flex: 1;
+  border: 1px solid #333;
+  height: 110px;
+  margin: 2px;
+}
+
+footer {
+  border: 1px solid black;
+  height: 70px;
+  /* PCレイアウト維持のキーポイント② */
+  /* 常に幅100%を確保し、contentとsideの下に回り込むようにする */
+  flex-basis: 100%;
+}
+
+/* ========= 色の指定 ========= */
+.row-1 .box {
+  background-color: #00ffff;
+}
+.row-2 .box {
+  background-color: #95f895;
+}
+.row-3 .box {
+  background-color: #e685c4;
+}
+.row-4 .box {
+  background-color: #a5b6e2;
+}
+
+/* ========================================
+   レスポンシブ設定 (Responsive Styles)
+   ======================================== */
+/* タブレット (Tablet) */
+@media screen and (max-width: 959px) {
+  .main {
+    width: 100%;
+  }
+  .row-1 .box {
+    /*
+     * flex-basisでアイテムの基本幅を50%に設定します。
+     * gap(10px)の半分の5pxを引くことで、2つのボックスが1行にぴったり収まります。
+     * 計算式: calc(50% - (gap / 2))
+     */
+    flex-basis: calc(50% - 10px);
+    flex-grow: 0; /* flex:1で設定されたgrowをリセットし、アイテムが不必要に伸びないようにする */
+  }
+  .row-4 .box {
+    flex-basis: calc(33% - 10px); /*row-4も同様に33%*/
+    flex-grow: 0; /* flex:1で設定されたgrowをリセットし、アイテムが不必要に伸びないようにする */
+  }
+  .row-1 {
+    flex-wrap: wrap;
+  }
+  .row-4 {
+    flex-wrap: wrap;
+  }
+}
+
+/* スマホ (Smartphone) */
+@media screen and (max-width: 559px) {
+  .main {
+    /* 要素を縦に並べる */
+    flex-direction: column;
+  }
+
+  .row {
+    /* ボックスを縦に並べる */
+    flex-direction: column;
+  }
+
+  .box {
+    /* 高さを少し大きくして、押しやすく見やすくする */
+    min-height: 120px;
+  }
+
+  /* orderプロパティで表示順を入れ替える */
+  .content-wrapper {
+    order: 1;
+  }
+  .side {
+    order: 2;
+    min-height: 100px;
+  }
+  footer {
+    order: 3;
+    flex-basis: auto;
+    min-height: 80px;
+  }
+}

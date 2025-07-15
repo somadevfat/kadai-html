@@ -1,0 +1,172 @@
+* {
+  box-sizing: border-box; /* 幅の計算に余白 など含めて*/
+
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  width: 55%;
+
+  max-width: 1980px;
+  margin: 0px auto;
+  border: 1px solid black;
+  padding: 10px;
+  gap: 10px; /* グリッドアイテム間の隙間 */
+
+  display: flex;
+  flex-direction: column;
+}
+.wrapper {
+  display: flex;
+  flex: 3;
+  flex-direction: column; /* 包んだの縦に並べる*/
+  gap: 10px;
+}
+
+.side {
+  border: 1px solid black;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-area {
+  display: flex; /* side headerを横並びにする */
+  gap: 10px;
+}
+
+/* grid-areaでグリッドエリア名に対応した要素、クラス属性を配置 */
+header {
+  border: 1px solid black;
+  height: 110px;
+  display: flex;
+  align-items: center;
+}
+.menu {
+  border: 1px solid black;
+  height: 90px;
+  display: flex;
+  align-items: center;
+}
+
+footer {
+  border: 1px solid black;
+  height: 70px;
+  align-items: center;
+  display: flex;
+}
+
+/* .rowをflexで横に並べていく */
+.row {
+  display: flex;
+  gap: 5px;
+  border: 1px solid black;
+}
+.side-row {
+  display: flex;
+  padding: 2px;
+  flex: 1;
+}
+
+/* .boxを枠など */
+.box {
+  flex: 1; /* row内で均等にする*/
+  border: 1px solid black; /* 外枠線 */
+  min-height: 110px;
+  margin: 2px;
+}
+.side-box {
+  flex: 1;
+
+  margin: 2px;
+  border: 1px solid black;
+}
+.row-1 .box {
+  background-color: #00ffff;
+}
+.row-2 .box {
+  background-color: #95f895;
+}
+.row-3 .box {
+  background-color: #e685c4;
+}
+.row-4 .box {
+  background-color: #a5b6e2;
+}
+/* ========================================
+   レスポンシブ設定 (Responsive Styles)
+   ======================================== */
+/* タブレット (Tablet) */
+@media screen and (max-width: 959px) {
+  .main {
+    width: 100%;
+  }
+  .row-1 .box {
+    /*
+     * flex-basisでアイテムの基本幅を50%に設定します。
+     * gap(10px)の半分の5pxを引くことで、2つのボックスが1行にぴったり収まります。
+     * 計算式: calc(50% - (gap / 2))
+     */
+    flex-basis: calc(50% - 10px);
+    flex-wrap: wrap;
+    flex-grow: 0; /* flex:1で設定されたgrowをリセットし、アイテムが不必要に伸びないようにする */
+  }
+  .row-4 .box {
+    flex-basis: calc(33% - 10px); /*row-4も同様に33%*/
+    flex-grow: 0; /* flex:1で設定されたgrowをリセットし、アイテムが不必要に伸びないようにする */
+  }
+  .row-1 {
+    flex-wrap: wrap;
+  }
+  .row-4 {
+    flex-wrap: wrap;
+  }
+}
+
+/* スマホ (Smartphone) */
+@media screen and (max-width: 559px) {
+  .main {
+    /* 要素を縦に並べる */
+    flex-direction: column;
+  }
+
+  .row {
+    /* ボックスを縦に並べる */
+    flex-direction: column;
+  }
+  .row-1 .box {
+    /*
+     * flex-basisでアイテムの基本幅を50%に設定します。
+     * gap(10px)の半分の5pxを引くことで、2つのボックスが1行にぴったり収まります。
+     * 計算式: calc(50% - (gap / 2))
+     */
+    flex-basis: calc(50% - 10px);
+    flex-wrap: wrap;
+    flex-grow: 0; /* flex:1で設定されたgrowをリセットし、アイテムが不必要に伸びないようにする */
+  }
+  .row-4 .box {
+    flex-basis: calc(33% - 10px); /*row-4も同様に33%*/
+    flex-grow: 0; /* flex:1で設定されたgrowをリセットし、アイテムが不必要に伸びないようにする */
+  }
+
+  .box {
+    /* 高さを少し大きくして、押しやすく見やすくする */
+    min-height: 120px;
+  }
+
+  .row .box {
+    background-color: #00ffff;
+  }
+
+  .content-area {
+    flex-direction: column;
+  }
+  .side-row {
+    flex-direction: column;
+  }
+  .side-box {
+    min-height: 120px;
+    background-color: #95f895;
+  }
+}
