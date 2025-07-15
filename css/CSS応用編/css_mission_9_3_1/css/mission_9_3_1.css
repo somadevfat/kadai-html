@@ -1,0 +1,164 @@
+/* ========================================
+// リセットCSS
+// ブラウザのデフォルトスタイルをリセット
+======================================== */
+* {
+  box-sizing: border-box; /* 幅の計算に余白 など含めて*/
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  width: 50%;
+  max-width: 1980px;
+  margin: 0px auto;
+  border: 1px solid black;
+  padding: 10px;
+  gap: 10px; /* グリッドアイテム間の隙間 */
+  padding: 10px;
+  gap: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto auto;
+  font-size: 24px;
+}
+
+header {
+  border: 1px solid black;
+  height: 110px;
+  display: grid;
+  align-items: center;
+  font-size: 1rem;
+}
+.menu {
+  border: 1px solid black;
+  display: grid;
+  padding-top: 5px;
+}
+.content-area {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr; /*ここで中央エリアの割合を決めている*/
+  gap: 2px;
+}
+.wrapper {
+  display: grid;
+  gap: 10px;
+  padding: 2px;
+}
+
+.side {
+  border: 1px solid black;
+  display: grid;
+  gap: 10px;
+  padding: 2px;
+}
+
+footer {
+  border: 1px solid black;
+  height: 100px;
+  display: grid;
+  align-items: center;
+}
+
+.row {
+  display: grid;
+  padding: 2px;
+  border: 1px solid #333;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+}
+
+.box {
+  border: 1px solid #333;
+  margin: 2px;
+  height: 100px;
+}
+
+.side-box {
+  border: 1px solid #333;
+  margin: 2px;
+  height: 110px;
+}
+
+.row-1 .box {
+  background-color: #00ffff;
+}
+.row-2 .box {
+  background-color: #95f895;
+}
+.row-3 .box {
+  background-color: #e685c4;
+}
+.row-4 .box {
+  background-color: #a5b6e2;
+}
+/* ========================================
+   レスポンシブ設定 (Responsive Styles)
+   ======================================== */
+/* タブレット (Tablet) */
+@media screen and (max-width: 959px) {
+  .main {
+    width: 100%;
+    margin: 0;
+
+    gap: 10px;
+  }
+  .menu {
+    min-height: 80px;
+    align-items: center;
+    padding: 0;
+  }
+
+  /* まず全ての.rowを1列にする */
+  .row {
+    display: grid;
+  }
+
+  /* .row-1 を 2列のグリッドにする */
+  .row-1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2列 */
+  }
+  /* .row-4 を 3列 x 2行のグリッドにする */
+  .row-4 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3列 */
+  }
+  .side {
+    display: grid;
+  }
+}
+
+/* スマホ (Smartphone) */
+@media screen and (max-width: 559px) {
+  .main {
+    /* 要素を縦に並べる */
+    margin: 0;
+    grid-template-columns: 1fr;
+  }
+
+  .content-area {
+    grid-template-columns: 1fr; /* 追加: 1カラムレイアウトに変更 */
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .box {
+    /* 高さを少し大きくして、押しやすく見やすくする */
+    min-height: 120px;
+  }
+  .row .box {
+    background-color: #00ffff;
+  }
+
+  .side {
+    min-height: 80px;
+    align-items: center;
+  }
+
+  footer {
+    min-height: 80px;
+  }
+}
