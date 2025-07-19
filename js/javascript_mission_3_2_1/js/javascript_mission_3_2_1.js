@@ -1,7 +1,24 @@
-const loopCount = 5;
-const valueToAdd = 9;
-let score = 0;
-for (let i = 0; i < loopCount; ++i) {
-  score += valueToAdd;
-  console.log(score);
-}
+//『「今日」は「家」で「母」が「掃除」を「お客さんがくるので」「いつもより念入りにしていた」』
+//上記文中、各「」の【文字列】をすぐ書き換えられるようにし、『文字列連結演算子』使って結果の文章を『Console(コンソール)』に出力しましょう。
+//「javascript_mission_3_2_1.js」ファイルを作成して解答してください
+let when = "今日";
+let where = "家";
+let who = "母";
+let what = "掃除";
+let why = "お客さんがくるので";
+let how = "いつもより念入りにしていた";
+console.log(
+  "「" +
+    when +
+    "」は「" +
+    where +
+    "」で「" +
+    who +
+    "」が「" +
+    what +
+    "」を「" +
+    why +
+    "」「" +
+    how +
+    "」"
+);

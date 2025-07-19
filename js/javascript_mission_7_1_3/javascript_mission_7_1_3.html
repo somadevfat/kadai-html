@@ -6,7 +6,34 @@
     <title>JavaScriptの学習</title>
   </head>
   <body>
-    <h1>JavaScript応用編 / 項目課題 / 『変数』と『定数』</h1>
+    <h1>JavaScript応用編 / 項目課題 / 『条件分岐if文』</h1>
+    <p>A君とB君が緑の窓口で相談しています。</p>
+    <p>A君「指定席に変えたいね！」</p>
+    <p>B君「追加料金が発生するよ！」</p>
+    <p>
+      A君「じゃあどちらかが通常の切符代以外に2人分の追加料金分以上を持っていて、
+      より多く持っている方が奢るってどう？」
+    </p>
+    <form id="myForm">
+      <p id="clickPoint">
+        <label
+          >2人「通常料金<input
+            type="number"
+            id="nomalPrice"
+            value="500"
+          />円と追加料金</label
+        ><label for="nomalPrice" id="price2"></label
+        ><label for="price2"
+          ><input type="number" id="hiPrice" value="500" /> </label
+        ><label for="hiPrice">円だね。」</label>
+      </p>
+    </form>
+
+    <div id="output"></div>
+    <p>
+      ↑『○君「僕が奢るね」』あるいは『2人「指定席は諦めるか」』あるいは…etc、←この部分は条件によって表示が変わるようにしてください。
+    </p>
+
     <script src="js/javascript_mission_7_1_3.js"></script>
     <!--//フォルダ名jsの中のjavascript_mission_7_1_3.jsというファイルを読み込む-->
   </body>

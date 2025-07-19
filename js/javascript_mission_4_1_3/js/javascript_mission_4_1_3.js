@@ -1,7 +1,9 @@
-const loopCount = 5;
-const valueToAdd = 9;
-let score = 0;
-for (let i = 0; i < loopCount; ++i) {
-  score += valueToAdd;
-  console.log(score);
+/*『HTML』に要素を複数作成し、その要素をタグ指定で特定して『Console(コンソール)』に出力しましょう。
+「javascript_mission_4_1_3.js」ファイルを作成して解答してください。*/
+for (let i = 1; i <= 5; i++) {
+  const p = document.createElement("p");
+  p.textContent = `段落 ${i}`;
+  document.body.appendChild(p); //作ったpタグをbodyの最後へｈはは配置
 }
+console.log(document.querySelector("p"));
+console.log(document.querySelectorAll("p"));
