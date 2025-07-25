@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/javascript_general_mission_5_1.css" />
+    <title>JavaScriptの学習</title>
+  </head>
+  <body>
+    <h1>JavaScript応用編 / 総合課題5：ポーカーゲームの課題</h1>
+
+    <div id="game-container">
+      <!-- 親のエリア -->
+      <div id="parent-area">
+        <div class="parent-result-wrapper">
+          <span id="parent-result">勝ちor負けor引分</span>
+          <span>親</span>
+        </div>
+        <div id="parent-hand-rank">親の役名を表示</div>
+        <div id="parent-cards">
+          <img src="" alt="トランプ表示" />
+          <img src="" alt="トランプ表示" />
+          <img src="" alt="トランプ表示" />
+          <img src="" alt="トランプ表示" />
+          <img src="" alt="トランプ表示" />
+        </div>
+      </div>
+
+      <button id="start-button">ゲームスタート</button>
+
+      <!-- 子のエリア -->
+      <div id="child-area">
+        <div id="child-cards">
+          <img src="" alt="トランプ表示" />
+          <img src="" alt="トランプ表示" />
+          <img src="" alt="トランプ表示" />
+          <img src="" alt="トランプ表示" />
+          <img src="" alt="トランプ表示" />
+        </div>
+        <div id="child-hand-rank">子の役名を表示</div>
+        <div>
+          <span>子</span>
+          <span id="child-result">勝ちor負けor引分</span>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/javascript_general_mission_5_1.js"></script>
+  </body>
+</html>

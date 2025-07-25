@@ -193,13 +193,12 @@ function drowing() {
 
   //-------- 結果表示 -----------
   // ユーザーとCOMの番号を画面に表示
-  userKey.forEach((key) => {
-    userNumbersDisplay.textContent += `${userDataObject[key][`value`]}`;
-  });
-
-  userKey.forEach((key) => {
-    comNumbersDisplay.textContent += `${comNumbersData[key][`value`]}`;
-  });
+  userNumbersDisplay.textContent = `${userDataObject[1][`value`]} ${
+    userDataObject[2][`value`]
+  } ${userDataObject[3][`value`]}`;
+  comNumbersDisplay.textContent = `${comNumbersData[1][`value`]} ${
+    comNumbersData[2][`value`]
+  } ${comNumbersData[3][`value`]}`;
 
   // 判定結果に応じて当選内容を表示
   if (straightResult) {

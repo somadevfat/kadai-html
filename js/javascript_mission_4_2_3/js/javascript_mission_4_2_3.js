@@ -6,32 +6,35 @@ const parent = document.createElement("div");
 parent.textContent = "親";
 parent.id = "parent";
 document.body.appendChild(parent);
-let child = [];
+let children = [];
 for (let i = 1; i <= 5; i++) {
-  child[i] = document.createElement("div");
-  child[i].textContent = `子 ${i}`;
-  child[i].id = `child${i}`;
-  parent.appendChild(child[i]);
+  children[i] = document.createElement("div");
+  children[i].textContent = `子 ${i}`;
+  children[i].id = `children${i}`;
+  parent.appendChild(children[i]);
 }
 const parentNode = document.getElementById("parent");
 console.log("親ノード:", parentNode);
-const chi = [];
-//奇数とわかっているためifで分岐させずにn/2で記述
-const middleIndex = Math.floor(child.length / 2);
-for (let z = middleIndex; z < child.length; z++) {
-  chi[z] = document.getElementById("child" + z);
-  if (z <= middleIndex) {
-    console.log("真ん中より上");
-  }
-  console.log(chi[z]);
-}
 
-for (let z = middleIndex; z >= 0; z--) {
-  chi[z] = document.getElementById("child" + z);
-  if (z >= 0) {
-    if (z !== 0) {
-      if (z >= middleIndex) console.log("真ん中より下");
-      console.log(chi[z]);
-    }
+const middleIndex = Math.floor(children.length / 2);
+
+function elementsAfterMiddles() {
+  let el = document.getElementById(`children${[middleIndex]}`);
+  let middle = middleIndex;
+  while (el) {
+    console.log(el);
+    el = el.nextSibling;
+    middle++;
   }
 }
+function elementsPreviousMiddles() {
+  let el = document.getElementById(`children${[middleIndex]}`);
+  let middle = middleIndex;
+  while (el) {
+    console.log(el);
+    el = el.previousSibling;
+    middle--;
+  }
+}
+elementsPreviousMiddles();
+elementsAfterMiddles();
