@@ -15,6 +15,7 @@
 これらをランダムに引いて組み合わせてドローを定義
 set にれて.size,lengthで配列の長さで重複しないようにする
 */
+
 /**
  * ランダムなカード番号を生成します。
  * 1（エース）は14に変換して返します（Aを最強として扱うため）。
@@ -25,6 +26,10 @@ const randomDrawingNumber = (maxValue) => {
   const randam = Math.floor(Math.random() * maxValue + 1);
   if (randam === 1) return 14;
   else return randam;
+};
+const randomDrawingSuit = (maxValue) => {
+  const randam = Math.floor(Math.random() * maxValue + 1);
+  return randam;
 };
 
 /**
@@ -43,8 +48,9 @@ const CordsDrawing10 = () => {
 
   while (drawnCardStrings.size < 10) {
     const randomNumber = randomDrawingNumber(13);
-    const randomSuit = randomDrawingNumber(4);
+    const randomSuit = randomDrawingSuit(4);
     const cardKey = `${randomNumber}-${randomSuit}`;
+    console.log(`スート= ${randomSuit}`);
 
     if (!drawnCardStrings.has(cardKey)) {
       // 重複がなければセットに追加し、カード配列に格納
@@ -60,16 +66,16 @@ const CordsDrawing10 = () => {
  * キーは役の強さの数値、値は役名の文字列
  */
 const HAND_RANKS = {
-  9: "ROYAL_FLUSH", // ロイヤルフラッシュ
-  8: "STRAIGHT_FLUSH", // ストレートフラッシュ
-  7: "FOUR_OF_A_KIND", // フォーカード
-  6: "FULL_HOUSE", // フルハウス
-  5: "FLUSH", // フラッシュ
-  4: "STRAIGHT", // ストレート
-  3: "THREE_OF_A_KIND", // スリーカード
-  2: "TWO_PAIR", // ツーペア
-  1: "ONE_PAIR", // ワンペア
-  0: "HIGH_CARD", // ハイカード（役なし）
+  9: "ロイヤルフラッシュ", // ROYAL_FLUSH
+  8: "ストレートフラッシュ", // STRAIGHT_FLUSH
+  7: "フォーカード", // FOUR_OF_A_KIND
+  6: "フルハウス", // FULL_HOUSE
+  5: "フラッシュ", // FLUSH
+  4: "ストレート", // STRAIGHT
+  3: "スリーカード", // THREE_OF_A_KIND
+  2: "ツーペア", // TWO_PAIR
+  1: "ワンペア", // ONE_PAIR
+  0: "ハイカード", // HIGH_CARD（役なし）
 };
 
 /**
@@ -77,7 +83,11 @@ const HAND_RANKS = {
  */
 const PokerResult = () => {
   const cords10 = CordsDrawing10();
-
+  // カードををUIに表示
+  const cards = Array.from(document.querySelectorAll(".card"));
+  cords10.forEach((out, index) => {
+    cards[index].className = `card rank-${out.number} suit-${out.suit}`;
+  });
   // 親と子に5枚ずつカードを分割
   const parent = cords10.slice(0, 5);
   const child = cords10.slice(5, 10);
@@ -91,7 +101,9 @@ const PokerResult = () => {
   // 役の強さを判定
   const parentResult = getPairHand(parentCountNumber, parent);
   const childResult = getPairHand(childCountNumber, child);
-
+  //役のUI表示
+  console.log(`親: ${HAND_RANKS[parentResult]}`);
+  console.log(`子: ${HAND_RANKS[childResult]}`);
   // 結果をコンソールに出力
   console.log("親の手札:", parent);
   console.log("子の手札:", child);
@@ -101,29 +113,51 @@ const PokerResult = () => {
   console.log("子の役結果:", childResult);
 
   // 勝敗判定
+  const childResultUI = document.getElementById("child-result");
+  const parentResultUI = document.getElementById("parent-result");
+
   if (parentResult > childResult) {
     console.log(`親の勝ち`);
+    parentResultUI.textContent = `勝ち`;
+    childResultUI.textContent = `負け`;
   } else if (parentResult < childResult) {
     console.log(`子の勝ち`);
+    childResultUI.textContent = `勝ち`;
+    parentResultUI.textContent = `負け`;
   } else {
-    // 役が同じ場合はキッカーで勝負
-    const kickerResult = compareKickers(
-      parentCountNumber,
-      childCountNumber,
-      parentResult
-    );
-    if (kickerResult === 1) {
-      console.log(`親の勝ち`);
-    } else if (kickerResult === 2) {
-      console.log(`子の勝ち`);
+    // 役が同じ場合
+    if (parentResult === 0) {
+      // ハイカードの場合はキッカーで勝負
+      const kickerResult = compareKickers(
+        parentCountNumber,
+        childCountNumber,
+        parentResult
+      );
+      if (kickerResult === 1) {
+        console.log(`親の勝ち`);
+        parentResultUI.textContent = `勝ち`;
+        childResultUI.textContent = `負け`;
+      } else if (kickerResult === 2) {
+        console.log(`子の勝ち`);
+        childResultUI.textContent = `勝ち`;
+        parentResultUI.textContent = `負け`;
+      } else {
+        console.log(`引き分け`);
+        childResultUI.textContent = `引き分け`;
+        parentResultUI.textContent = `引き分け`;
+      }
     } else {
+      // ハイカード以外で役が同じ場合は引き分け
       console.log(`引き分け`);
+      childResultUI.textContent = `引き分け`;
+      parentResultUI.textContent = `引き分け`;
     }
   }
-
-  // 役名を表示
-  console.log(`親: ${HAND_RANKS[parentResult]}`);
-  console.log(`子: ${HAND_RANKS[childResult]}`);
+  //役UI表示
+  const childHandRank = document.getElementById(`child-hand-rank`);
+  const parentHandRank = document.getElementById(`parent-hand-rank`);
+  childHandRank.textContent = `${HAND_RANKS[childResult]}`;
+  parentHandRank.textContent = `${HAND_RANKS[parentResult]}`;
 };
 
 /**
@@ -338,7 +372,7 @@ function isFlush(hand) {
   return uniqueSortedSuits.length === 1;
 }
 
-//キッカー関数
-
 // 関数実行
-PokerResult();
+
+const stBtn = document.getElementById(`start-button`);
+stBtn.addEventListener(`click`, PokerResult);

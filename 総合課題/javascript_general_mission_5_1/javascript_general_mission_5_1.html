@@ -7,40 +7,38 @@
     <title>JavaScriptの学習</title>
   </head>
   <body>
-    <h1>JavaScript応用編 / 総合課題5：ポーカーゲームの課題</h1>
-
     <div id="game-container">
       <!-- 親のエリア -->
-      <div id="parent-area">
-        <div class="parent-result-wrapper">
-          <span id="parent-result">勝ちor負けor引分</span>
-          <span>親</span>
+      <div id="parenArea" class="gameArea">
+        <div class="player-info" id="parentInfo">
+          <span id="parent-result" class="familyResult">リザルト</span>
+          <span class="family">親</span>
         </div>
-        <div id="parent-hand-rank">親の役名を表示</div>
-        <div id="parent-cards">
-          <img src="" alt="トランプ表示" />
-          <img src="" alt="トランプ表示" />
-          <img src="" alt="トランプ表示" />
-          <img src="" alt="トランプ表示" />
-          <img src="" alt="トランプ表示" />
+        <div id="parent-hand-rank" class="yaku">役</div>
+        <div id="parent-cards" class="card-area">
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
         </div>
       </div>
 
       <button id="start-button">ゲームスタート</button>
 
       <!-- 子のエリア -->
-      <div id="child-area">
-        <div id="child-cards">
-          <img src="" alt="トランプ表示" />
-          <img src="" alt="トランプ表示" />
-          <img src="" alt="トランプ表示" />
-          <img src="" alt="トランプ表示" />
-          <img src="" alt="トランプ表示" />
+      <div id="childArea" class="gameArea">
+        <div id="child-cards" class="card-area">
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
         </div>
-        <div id="child-hand-rank">子の役名を表示</div>
-        <div>
-          <span>子</span>
-          <span id="child-result">勝ちor負けor引分</span>
+        <div id="child-hand-rank" class="yaku">役</div>
+        <div class="player-info" id="childInfo">
+          <span class="family">子</span>
+          <span id="child-result" class="familyResult">リザルト</span>
         </div>
       </div>
     </div>

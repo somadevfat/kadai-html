@@ -3,11 +3,46 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/javascript_general_mission_5_1.css" />
     <title>JavaScriptの学習</title>
   </head>
   <body>
-    <h1>JavaScript応用編 / 総合課題5：ポーカーゲームの課題</h1>
+    <div id="game-container">
+      <!-- 親のエリア -->
+      <div id="parenArea" class="gameArea">
+        <div class="player-info" id="parentInfo">
+          <span id="parent-result" class="familyResult">リザルト</span>
+          <span class="family">親</span>
+        </div>
+        <div id="parent-hand-rank" class="yaku">役</div>
+        <div id="parent-cards" class="card-area">
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+        </div>
+      </div>
+
+      <button id="start-button">ゲームスタート</button>
+
+      <!-- 子のエリア -->
+      <div id="childArea" class="gameArea">
+        <div id="child-cards" class="card-area">
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+        </div>
+        <div id="child-hand-rank" class="yaku">役</div>
+        <div class="player-info" id="childInfo">
+          <span class="family">子</span>
+          <span id="child-result" class="familyResult">リザルト</span>
+        </div>
+      </div>
+    </div>
+
     <script src="js/javascript_general_mission_5_1.js"></script>
-    <!--//フォルダ名jsの中のjavascript_general_mission_5_1.jsというファイルを読み込む-->
   </body>
 </html>
